@@ -12,6 +12,22 @@ class User extends Authenticatable
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;
 
+    public function skill()
+    {
+        return $this->belongsToMany(Skill::class);
+    }
+
+    public function post()
+    {
+        return $this->HasMany(Post::class);
+    }
+
+
+    public function comment()
+    {
+        return $this->HasMany(Comment::class);
+    }
+    
     /**
      * The attributes that are mass assignable.
      *
@@ -20,7 +36,10 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
-        'password',
+        'image',
+        'about',
+        'phone',
+        'address',
     ];
 
     /**
@@ -44,5 +63,13 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function image()
+    {
+        if ($this->image) {
+            return asset($this->image);
+        }
+        return asset('default.png');
     }
 }
