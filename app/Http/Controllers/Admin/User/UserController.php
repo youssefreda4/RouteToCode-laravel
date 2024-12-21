@@ -72,7 +72,9 @@ class UserController extends Controller
         }
         $data['password'] = $request->has('password') ? bcrypt($request->password) : $data->password;
         $data['image'] = $imageNAme;
-        $data['about'] = nl2br($request->about);
+        if ($request->has('about')) {
+            $data['about'] = nl2br($request->about);
+        }
         $user->update($data);
         // $user->skill()->detach();
         $user->skill()->sync($request->skills);

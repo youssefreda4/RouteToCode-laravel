@@ -270,7 +270,7 @@
                                               d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8" />
                                       </svg>
                                   </i>
-                                  <p>Add Category</p>
+                                  <p>Add Categories</p>
                               </a>
                           </li>
                       </ul>
@@ -416,6 +416,78 @@
                       </a>
                   </li>
 
+                  {{-- Questions
+                  <li class="nav-item {{ request()->routeIs('dashboard.questions.*') ? ' menu-open' : '' }}">
+                      <a href="#"
+                          class="nav-link {{ request()->routeIs('dashboard.questions.*') ? 'active' : '' }}">
+                          <i class=" nav-icon">
+                              <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true"
+                                  xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none"
+                                  viewBox="0 0 24 24">
+                                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                      stroke-width="2"
+                                      d="M10 11V8a1 1 0 0 0-1-1H6a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1Zm0 0v2a4 4 0 0 1-4 4H5m14-6V8a1 1 0 0 0-1-1h-3a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1Zm0 0v2a4 4 0 0 1-4 4h-1" />
+                              </svg>
+
+
+                          </i>
+                          <p>
+                              Questions
+                              <i class="right  ">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                      fill="currentColor" class="bi bi-arrow-left-short" viewBox="0 0 16 16">
+                                      <path fill-rule="evenodd"
+                                          d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5" />
+                                  </svg>
+                              </i>
+                          </p>
+                      </a>
+                      <ul class="nav nav-treeview">
+                          <li class="nav-item">
+                              <a href="{{ route('dashboard.questions.view') }}"
+                                  class="nav-link {{ request()->routeIs('dashboard.questions.view') ? 'active' : '' }}">
+                                  <i class="nav-icon">
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                          fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                                          <path fill-rule="evenodd"
+                                              d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8" />
+                                      </svg>
+                                  </i>
+                                  <p>All Questions</p>
+                              </a>
+                          </li>
+                          <li class="nav-item">
+                              <a href="{{ route('dashboard.questions.create') }}"
+                                  class="nav-link {{ request()->routeIs('dashboard.questions.create') ? 'active' : '' }}">
+                                  <i class="nav-icon">
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                          fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                                          <path fill-rule="evenodd"
+                                              d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8" />
+                                      </svg>
+                                  </i>
+                                  <p>Add Questions</p>
+                              </a>
+                          </li>
+                      </ul>
+                  </li> --}}
+
+                  {{-- Messages --}}
+                  <li class="nav-item">
+                      <a href="{{ route('dashboard.messages.view') }}"
+                          class="nav-link {{ request()->routeIs('dashboard.messages.*') ? 'active' : '' }}">
+                          <i class="nav-icon">
+                            <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 9h5m3 0h2M7 12h2m3 0h5M5 5h14a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1h-6.616a1 1 0 0 0-.67.257l-2.88 2.592A.5.5 0 0 1 8 18.477V17a1 1 0 0 0-1-1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Z"/>
+                              </svg>
+                              
+                          </i>
+                          <p>
+                              Messages
+                              {{-- <span class="right badge badge-danger">1</span> --}}
+                          </p>
+                      </a>
+                  </li>
 
                   {{-- <li class="nav-item {{ request()->routeIs('dashboard.users.*') ? ' menu-open' : '' }}">
                       <a href="#"
@@ -551,7 +623,17 @@
                       </a>
                   </li> --}}
 
+
               </ul>
+              {{-- Logout --}}
+              <div class=" mt-3 pb-3 mb-3 ">
+                  @auth
+                      <form action="{{ route('auth.logout') }}" method="POST">
+                          @csrf
+                          <button type="submit" class="btn btn-outline-light navigation--button ">Logout</button>
+                      </form>
+                  @endauth
+              </div>
           </nav>
           <!-- /.sidebar-menu -->
       </div>

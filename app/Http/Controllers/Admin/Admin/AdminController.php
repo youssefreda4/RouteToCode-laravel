@@ -40,8 +40,8 @@ class AdminController extends Controller
         $data = $request->validated();
         if ($request->hasFile('image')) {
             $image = $request->file('image')->store('/public/admins');
+            $data['image'] = $image;
         }
-        $data['image'] = $image;
         Admin::create($data);
 
         return redirect()->route('dashboard.admins.view')->with('success', 'Admin created successfully');

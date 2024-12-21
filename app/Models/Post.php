@@ -10,7 +10,7 @@ class Post extends Model
     /** @use HasFactory<\Database\Factories\PostFactory> */
     use HasFactory;
 
-    
+
     protected $fillable = [
         'title',
         'description',
@@ -40,6 +40,10 @@ class Post extends Model
         return $this->hasMany(Comment::class);
     }
 
+    public function like()
+    {
+        return $this->hasMany(Like::class, 'post_id');
+    }
 
     public function image()
     {

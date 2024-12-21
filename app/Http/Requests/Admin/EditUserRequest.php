@@ -26,10 +26,13 @@ class EditUserRequest extends FormRequest
             'name' => 'required|string|min:6|max:35',
             'email' => 'required|email',
             Rule::unique('users')->ignore($this->id),
-            'about' => 'string|max:1500',
-            'phone' => 'string|max:10',
-            'address' => 'string|max:100',
+            'about' => 'nullable|string|max:1500',
+            'phone' => 'nullable|string|max:11',
+            'address' => 'nullable|string|max:100',
             'image' => 'image|mimes:png,jpg',
+            'facebook' => 'nullable|url',
+            'linkedin' => 'nullable|url',
+            'github' => 'nullable|url',
             'password' => 'nullable|string|min:8|max:15|confirmed'
         ];
     }

@@ -57,17 +57,16 @@
                                     <!-- phone Field -->
                                     <div class="form-group">
                                         <label for="phone">Phone (Egypt - +20)</label>
-                                        <input type="text" class="form-control" name="phone" placeholder="Phone Number"
+                                        <input type="number" class="form-control" name="phone" placeholder="Phone Number"
                                             value="{{ $user->phone }}" required>
                                     </div>
 
                                     <!-- about Field -->
                                     <div class="form-group">
                                         <label for="about">About</label>
-                                        <textarea name="about" class="form-control" placeholder="About You" cols="30" rows="4">
-                                            {{ $user->about }}
-                                        </textarea>
+                                        <textarea name="about" class="form-control" placeholder="About You" cols="30" rows="4">{{ $user->about }}</textarea>
                                     </div>
+
 
                                     <!-- address Field -->
                                     <div class="form-group">
@@ -84,6 +83,27 @@
                                                     value="{{ $skill->id }}">{{ $skill->name }}</option>
                                             @endforeach
                                         </select>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="facebook" class="form-label">Facebook</label>
+                                        <input type="url" name="facebook" id="facebook" class="form-control"
+                                            placeholder="https://facebook.com/your-profile"
+                                            value="{{ value($user->facebook) }}">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="github" class="form-label">GitHub</label>
+                                        <input type="url" name="github" id="github" class="form-control"
+                                            placeholder="https://github.com/your-profile"
+                                            value="{{ value($user->github) }}">
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="linkedin" class="form-label">LinkedIn</label>
+                                        <input type="url" name="linkedin" id="linkedin" class="form-control"
+                                            placeholder="https://linkedin.com/in/your-profile"
+                                            value="{{ value($user->linkedin) }}">
                                     </div>
 
 
@@ -103,7 +123,8 @@
                                     @if ($user->image != null)
                                         <label for="image">Photo</label>
                                         <div class="mb-3 ">
-                                            <img src="{{ $user->image() }}" width="700px" class="rounded" alt="">
+                                            <img src="{{ $user->image() }}" width="700px" class="rounded"
+                                                alt="">
                                         </div>
                                     @endif
 

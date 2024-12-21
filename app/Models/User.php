@@ -19,15 +19,20 @@ class User extends Authenticatable
 
     public function post()
     {
-        return $this->HasMany(Post::class);
+        return $this->hasMany(Post::class);
     }
 
 
     public function comment()
     {
-        return $this->HasMany(Comment::class);
+        return $this->hasMany(Comment::class);
     }
-    
+
+    public function like()
+    {
+        return $this->hasMany(Like::class, 'user_id');
+    }
+
     /**
      * The attributes that are mass assignable.
      *
@@ -40,6 +45,10 @@ class User extends Authenticatable
         'about',
         'phone',
         'address',
+        'facebook',
+        'linkedin',
+        'github',
+        'password',
     ];
 
     /**

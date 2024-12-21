@@ -7,9 +7,10 @@ use App\Models\Post;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Admin\EditPostRequest;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use App\Http\Requests\Admin\PostRequest;
+use App\Http\Requests\Admin\EditPostRequest;
 
 class PostController extends Controller
 {
@@ -53,7 +54,7 @@ class PostController extends Controller
             $image = $request->file('image')->store('/public/posts');
             $post['image'] = $image;
         }
-        $post['user_id'] = 50;
+        $post['user_id'] = Auth::guard('admin')->user()->id;
         $post = Post::create($post);
         $post->tag()->sync($request->tags);
         return redirect()->route('dashboard.posts.view')->with('success', 'Post added successfully');
@@ -84,7 +85,7 @@ class PostController extends Controller
             'title' => $request->title,
             'description' => $request->description,
             'image' => $image_name,
-            'user_id' => 50,
+            'user_id' => Auth::guard('admin')->user()->id,
             'category_id' => $request->category_id,
         ]);
         $post->tag()->sync($request->tags);
