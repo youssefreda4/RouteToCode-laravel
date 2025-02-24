@@ -52,13 +52,13 @@ class SkillController extends Controller
 
     public function edit(Skill $skill)
     {
-        return view('Admin.skills.edit', compact('skill'));
+        return view('Admin.pages.skills.edit', compact('skill'));
     }
 
     public function update(Request $request, Skill $skill)
     {
         $request->validate([
-            'name' => 'required|string|min:6|max:30',
+            'name' => 'required|string|min:3|max:30',
         ]);
 
         $skill->update([

@@ -15,7 +15,7 @@
                       alt="User Image">
               </div>
               <div class="info">
-                  <a href="#" class="d-block">Alexander Pierce</a>
+                  <a href="#" class="d-block">{{ auth()->guard('admin')->user()->name }}</a>
               </div>
           </div>
 
@@ -311,7 +311,7 @@
                                               d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8" />
                                       </svg>
                                   </i>
-                                  <p>All Categorys</p>
+                                  <p>All Tags</p>
                               </a>
                           </li>
                           <li class="nav-item">
@@ -324,7 +324,7 @@
                                               d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8" />
                                       </svg>
                                   </i>
-                                  <p>Add Category</p>
+                                  <p>Add Tag</p>
                               </a>
                           </li>
                       </ul>

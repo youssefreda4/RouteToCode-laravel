@@ -14,6 +14,7 @@
                         <!-- Profile Picture -->
                         <img src="{{ $user->image() }}" alt="Profile Picture" class="img-fluid rounded-circle mb-3">
                         <h5 class="card-title">{{ $user->name }}</h5>
+                        <h5 class="card-title">{{ $user->email }}</h5>
                         {{-- <p class="text-muted">Web Developer & Designer</p> --}}
                         <a href="{{ route('front.profile.edit', $user->id) }}" class="btn btn-primary mt-2">Edit Profile</a>
                     </div>

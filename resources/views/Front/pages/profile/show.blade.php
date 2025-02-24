@@ -15,6 +15,7 @@
                         <!-- Profile Picture -->
                         <img src="{{ $user->image() }}" alt="Profile Picture" class="img-fluid rounded-circle mb-3">
                         <h5 class="card-title">{{ $user->name }}</h5>
+                        <h5 class="card-title">{{ $user->email }}</h5>
                         {{-- Remove "Edit Profile" button for others' profiles --}}
                     </div>
                 </div>

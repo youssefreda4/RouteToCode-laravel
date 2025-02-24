@@ -25,6 +25,10 @@
                 <div class="row">
                     <!-- left column -->
                     <div class="col-md-12">
+                        <div>
+                            <x-error></x-error>
+                            <x-success></x-success>
+                        </div>
                         <!-- general form elements -->
                         <div class="card card-primary">
                             <!-- form start -->
