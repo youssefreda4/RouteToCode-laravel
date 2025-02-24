@@ -48,7 +48,7 @@ class PostController extends Controller
     {
         $post = $request->validated();
         if ($request->hasFile('image')) {
-            $image = $request->file('image')->store('/public/posts');
+            $image = $request->file('image')->store('/posts');
             $post['image'] = $image;
         }
         $post['user_id'] =  Auth::guard('web')->user()->id;
