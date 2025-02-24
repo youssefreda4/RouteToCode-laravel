@@ -78,7 +78,7 @@
                                             @if ($post->image != null)
                                                 <label for="image">Photo</label>
                                                 <div class="mb-3 ">
-                                                    <img src="{{ $post->image }}" width="700px" class="rounded"
+                                                    <img src="{{ asset($post->image) }}" width="700px" class="rounded"
                                                         alt="">
                                                 </div>
                                             @endif
