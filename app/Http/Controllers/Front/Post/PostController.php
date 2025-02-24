@@ -93,6 +93,6 @@ class PostController extends Controller
         $postImage = $post->image;
         File::delete($postImage);
         $post->delete();
-        return back()->with('success', 'Post deleted successfully');
+        return redirect()->route('front.posts.view')->with('success', 'Post deleted successfully');
     }
 }
