@@ -34,11 +34,11 @@ class AuthController extends Controller
         $data = $request->validated();
         if (Auth::guard('admin')->attempt($data)) {
             $user = Auth::guard('admin')->user();
-            Auth::login($user);
+            Auth::guard('admin')->login($user);
             return redirect()->route('dashboard.home');
         } elseif (Auth::guard('web')->attempt($data)) {
             $user = Auth::guard('web')->user();
-            Auth::login($user);
+            Auth::guard('web')->login($user);
             return redirect()->route('front.home');
         }
         return back()->withErrors(['error' => 'Incorrect email or password']);
