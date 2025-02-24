@@ -75,6 +75,13 @@
                                             <div class="h2 fw-bolder">{{ $post->title }}</div>
                                             <p>{{ Str::limit($post->description, 150, ' .......') }}</p>
 
+                                            @if ($post->image != null)
+                                                <label for="image">Photo</label>
+                                                <div class="mb-3 ">
+                                                    <img src="{{ $post->image() }}" width="700px" class="rounded"
+                                                        alt="">
+                                                </div>
+                                            @endif
                                             {{-- <div class="d-flex align-items-center mb-3">
                                                 <button class="btn btn-outline-primary  me-2">
                                                     <i class="bi bi-heart"></i> Like
