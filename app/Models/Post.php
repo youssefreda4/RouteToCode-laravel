@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 
 class Post extends Model
 {
@@ -48,7 +49,7 @@ class Post extends Model
     public function image()
     {
         if ($this->image) {
-            return asset($this->image);
+            return Storage::url($this->image);
         }
         return asset('default.png');
     }
