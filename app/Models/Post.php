@@ -48,7 +48,7 @@ class Post extends Model
     public function image()
     {
         if ($this->image) {
-            return asset($this->image);
+            return asset('public/'.$this->image);
         }
         return asset('default.png');
     }
