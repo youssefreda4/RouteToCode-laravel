@@ -122,7 +122,7 @@
                                     @if ($post->image != null)
                                         <div class="col-lg-6 col-xl-7 d-flex justify-content-center">
                                             <div class="d-flex justify-content-center">
-                                                <img src="{{ asset($post->image) }}" alt="" class="rounded img-fluid"
+                                                <img src="{{ $post->image() }}" alt="" class="rounded img-fluid"
                                                     style="max-width: 100%; height: auto;">
                                             </div>
                                         </div>
