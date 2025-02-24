@@ -12,7 +12,7 @@ use App\Http\Controllers\Front\Question\QuestionController;
 
 Route::get('/', [HomeController::class, 'index'])->name('front.home');
 
-Route::middleware('auth', 'user.area')->group(function () {
+Route::middleware(['auth:web', 'user.area'])->group(function () {
     Route::controller(PostController::class)->group(function () {
         Route::get('/posts', 'index')->name('front.posts.view');
         Route::get('/posts/{post}/show', 'show')->name('front.posts.show');
