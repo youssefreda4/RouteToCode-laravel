@@ -37,7 +37,7 @@ class ProfileController extends Controller
         $imageNAme = $user->image;
         if ($request->hasFile('image')) {
             File::delete($imageNAme);
-            $imageNAme = $request->file('image')->store('/public/users');
+            $imageNAme = $request->file('image')->store('/');
         }
         $data['password'] = $request->has('password') ? bcrypt($request->password) : $data->password;
         $data['image'] = $imageNAme;
