@@ -12,7 +12,7 @@
                 <div class="card mb-4">
                     <div class="card-body text-center">
                         <!-- Profile Picture -->
-                        <img src="{{ $user->image() }}" alt="Profile Picture" class="img-fluid rounded-circle mb-3">
+                        <img src="{{ asset($user->image) }}" alt="Profile Picture" class="img-fluid rounded-circle mb-3">
                         <h5 class="card-title">{{ $user->name }}</h5>
                         <h5 class="card-title">{{ $user->email }}</h5>
                         {{-- <p class="text-muted">Web Developer & Designer</p> --}}
