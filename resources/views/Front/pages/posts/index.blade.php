@@ -59,8 +59,11 @@
                                             </div>
 
                                             <div class="d-flex align-items-center mb-3">
-                                                <img class="rounded-circle me-3" src="{{ $post->user->image() }}"
-                                                    alt="..." width="50px" />
+                                                {{-- <img class="rounded-circle me-3" src="{{ $post->user->image() }}"
+                                                    alt="..." width="50px" /> --}}
+                                                <img
+                                                    src="{{ Avatar::create($post->user->name)->setTheme('colorful') }}" />
+
                                                 <a class="text-decoration-none"
                                                     href="{{ route('front.profile.show', $post->user->id) }}">
                                                     <div class="small">
