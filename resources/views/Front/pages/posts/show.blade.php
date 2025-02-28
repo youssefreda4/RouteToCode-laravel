@@ -100,8 +100,9 @@
                                     <!-- Single comment-->
                                     <div class="d-flex mb-4 border p-3 rounded-3">
                                         <div class="flex-shrink-0">
-                                            <img class="rounded-circle" src="{{ $comment->user->image() }}" width="50px"
-                                                alt="..." />
+                                            {{-- <img class="rounded-circle" src="{{ $comment->user->image() }}" width="50px"
+                                                alt="..." /> --}}
+                                            <img src="{{ Avatar::create($comment->user->name)->toBase64() }}" />
                                         </div>
                                         <div class="ms-3">
                                             <div class="d-flex justify-content-between align-items-center">
