@@ -102,7 +102,7 @@
                                         <div class="flex-shrink-0">
                                             {{-- <img class="rounded-circle" src="{{ $comment->user->image() }}" width="50px"
                                                 alt="..." /> --}}
-                                            <img src="{{ Avatar::create($comment->user->name)->setTheme('colorful')}}" />
+                                            <img src="{{ Avatar::create($comment->user->name)->setDimension(50)->setFontSize(18)->toBase64()}}" />
                                         </div>
                                         <div class="ms-3">
                                             <div class="d-flex justify-content-between align-items-center">

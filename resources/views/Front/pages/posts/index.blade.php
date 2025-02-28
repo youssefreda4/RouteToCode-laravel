@@ -62,7 +62,7 @@
                                                 {{-- <img class="rounded-circle me-3" src="{{ $post->user->image() }}"
                                                     alt="..." width="50px" /> --}}
                                                 <img
-                                                    src="{{ Avatar::create($post->user->name)->setTheme('colorful') }}" />
+                                                    src="{{ Avatar::create($post->user->name)->setDimension(50)->setFontSize(18)->toBase64() }}" />
 
                                                 <a class="text-decoration-none"
                                                     href="{{ route('front.profile.show', $post->user->id) }}">
