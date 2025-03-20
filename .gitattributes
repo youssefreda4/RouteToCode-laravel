@@ -1,6 +1,8 @@
 * text=auto eol=lf
 
-*.blade.php diff=php
+# Force .blade.php to be detected as PHP
+*.blade.php linguist-language=PHP
+
 *.css diff=css
 *.html diff=html
 *.md diff=markdown
